@@ -25,7 +25,7 @@ sudo apt-get install -y docker-engine
 sudo usermod -aG docker $(whoami)
 ```
 
-- Install docker-composer  
+- Install docker-compose 
 
 ```bash
 sudo -i
@@ -33,13 +33,13 @@ curl -L https://github.com/docker/compose/releases/download/1.16.0/docker-compos
 chmod +x /usr/local/bin/docker-compose
 ```
 
-- Run docker-composer ./
+- Run docker-compose ./
 
 ```bash
     docker-composer up -d
 ```
 ```bash
    sudo -i
-   echo "127.0.0.1 project.local" >> /etc/hosts
+   echo "127.0.0.1 project.dev" >> /etc/hosts
 ```
  
