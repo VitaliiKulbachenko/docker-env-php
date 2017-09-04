@@ -14,7 +14,7 @@ services:
             - ./hosts:/etc/nginx/conf.d
             - ./www:/var/www
             - ./logs:/var/log/nginx
-	 # nginx должен общаться с php контейнером
+        # nginx должен общаться с php контейнером
         links:
             - php
     php:
@@ -32,7 +32,7 @@ services:
             - "3306:3306"
         volumes:
             - ./mysql:/var/lib/mysql
-	    - ./backup/mysql:/backup
+            - ./backup/mysql:/backup
         # задаем пароль для root пользователя
         environment:
             MYSQL_ROOT_PASSWORD: 111111
