@@ -12,7 +12,7 @@ cd docker-env-php
 - Create work directory
 
 ```bash
-    mkdir -p {backup/mysql,mysql},logs}
+    mkdir -p {backup/mysql,mysql,logs}
 ```
 - Install docker Ubuntu
 
