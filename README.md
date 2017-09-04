@@ -2,6 +2,13 @@
 
 To start this app, perform the following steps:
 
+```bash
+git clone https://github.com/VitaliiKulbachenko/docker-env-php.git
+```
+
+```bash
+cd docker-env-php
+```
 - Create work directory
 
 ```bash
