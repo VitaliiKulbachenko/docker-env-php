@@ -36,7 +36,7 @@ chmod +x /usr/local/bin/docker-compose
 - Run docker-compose ./
 
 ```bash
-    docker-composer up -d
+    docker-compose up -d
 ```
 ```bash
    sudo -i
