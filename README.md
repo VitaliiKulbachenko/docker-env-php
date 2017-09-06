@@ -43,3 +43,4 @@ chmod +x /usr/local/bin/docker-compose
    echo "127.0.0.1 project.dev" >> /etc/hosts
 ```
  
+https://github.com/Nchalenko/WebAcademy_MVC_BLOG.git
