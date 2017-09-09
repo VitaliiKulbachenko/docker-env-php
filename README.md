@@ -17,20 +17,22 @@ cd docker-env-php
 - Install docker Ubuntu
 
 ```bash
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
-sudo apt-get update
-apt-cache policy docker-engine
-sudo apt-get install -y docker-engine
-sudo usermod -aG docker $(whoami)
-```
+  sudo apt-get update
+    sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+    echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
+    sudo apt-get update
 
-- Install docker-compose 
+    #Следующая команда позволяет переключиться из репозитория Ubuntu 16.04 в репозиторий Docker:
+    apt-cache policy docker-engine
+    sudo apt-get install -y docker-engine
 
-```bash
-sudo -i
-curl -L https://github.com/docker/compose/releases/download/1.16.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+    #добавьте своего пользователя в группу docker:
+    sudo usermod -aG docker $(whoami)
+    gnome-session-quit
+
+    #Install docker-compose	
+    sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.16.0/docker-compose-$(uname -s)-$(uname -m)"
+    sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 - Run docker-compose ./
@@ -39,8 +41,8 @@ chmod +x /usr/local/bin/docker-compose
     docker-compose up -d
 ```
 ```bash
-   sudo -i
+   sudo -s 
    echo "127.0.0.1 project.dev" >> /etc/hosts
 ```
  
-https://github.com/Nchalenko/WebAcademy_MVC_BLOG.git
+
