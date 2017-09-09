@@ -27,12 +27,11 @@ services:
         volumes:
             - ./www:/var/www
     mysql:
-        image: mysql:5
+        build: mysql:5
         ports:
             - "3306:3306"
         volumes:
             - ./mysql:/var/lib/mysql
-            - ./backup/mysql:/backup
         # задаем пароль для root пользователя
         environment:
             MYSQL_ROOT_PASSWORD: 111111
