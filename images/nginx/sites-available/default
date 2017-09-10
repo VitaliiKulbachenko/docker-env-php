@@ -1,0 +1,34 @@
+server {
+        listen          80 default ;
+        server_name     localhost;
+
+        root  /var/www/default;
+        
+	# Реализуем "красивые" ссылки для Drupal (и для ряда других CMS)
+	location / {
+	try_files $uri $uri/ /index.php?q=$uri&$args;
+
+ 	#limit_req  zone=default burst=6;
+	}
+
+        location /pub {
+            autoindex  on;
+            root  /var/www/default;
+        }
+
+	# Настройка логов, каждому виртуальному домену - свой лог
+	#если закомментирован тогда идет в глобальный лог указан в nginx.conf 
+	access_log /var/log/httpd/default-access.log;
+	error_log /var/log/httpd/default-error.log;
+
+
+# Подключаем все шаблоны для проверки, на реальных хостах будем использовать только нужные.
+include /etc/nginx/templates/default;
+include /etc/nginx/templates/php;
+include /etc/nginx/templates/phpmyadmin;
+include /etc/nginx/templates/phpldapadmin;
+#include /etc/nginx/templates/perlcgi;
+
+
+}
+
