@@ -26,6 +26,7 @@ RUN apt-get install -y mysql-client
 ADD my.cnf /etc/my.cnf
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | apt-get install -y nodejs
+RUN npm install bower -g
 
 # Добавим свой php.ini, можем в нем определять свои значения конфига
 ADD php.ini /usr/local/etc/php/conf.d/40-custom.ini
