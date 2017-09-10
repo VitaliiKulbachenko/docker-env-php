@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
 # Куда же без composer'а.
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN apt-get install mysql-client
+RUN apt-get install -y mysql-client
 ADD my.cnf /etc/my.cnf
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - sudo apt-get install -y nodejs
