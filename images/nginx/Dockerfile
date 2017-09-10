@@ -45,8 +45,9 @@ RUN \
        chown -R root:nginx /etc/nginx/sites-enabled && \
        chown -R root:nginx /etc/nginx/templates; chmod -R 644 /etc/nginx/templates/* && \
        chown -R root:nginx /var/www; chmod -R 755 /var/www && \
-   	   chown -R nginx:nginx /tmp/fcgi-cache/ && \
-	   ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+   	   chown -R nginx:nginx /tmp/fcgi-cache/ 
+	   
+RUN 	ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 	
 
 EXPOSE 80
