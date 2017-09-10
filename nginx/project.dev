@@ -3,7 +3,9 @@ server {
     server_name project.dev;
     error_log  /var/log/nginx/project.dev.error.log;
     access_log /var/log/nginx/project.dev-access.log;
-    root /var/www/project.dev;
+    root /var/www/project.dev/public;
+
+try_files $uri /index.php;
 
     location ~ \.php$ {
         try_files $uri =404;
