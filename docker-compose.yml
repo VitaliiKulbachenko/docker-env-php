@@ -30,7 +30,7 @@ services:
         volumes:
             - ./www:/var/www
     mysql:
-        image: ./images/mysql
+        build: ./images/mysql
         restart: on-failure:5
         ports:
             - "3306:3306"
