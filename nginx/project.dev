@@ -1,8 +1,8 @@
 server {
     index index.php;
     server_name project.dev;
-    error_log  /var/log/nginx/error.log;
-    access_log /var/log/nginx/access.log;
+    error_log  /var/log/nginx/project.dev.error.log;
+    access_log /var/log/nginx/project.dev-access.log;
     root /var/www/project.dev;
 
     location ~ \.php$ {

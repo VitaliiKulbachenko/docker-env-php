@@ -1,8 +1,13 @@
-location /NginxStatus {
+location /nginx_status {
 stub_status on;
 access_log   off;
-allow all;
+allow 192.168.20.2;
+deny all;
 auth_basic            "closed teritory";
 auth_basic_user_file  /etc/nginx/.htpasswd;
 }
+
+
+        
+
 

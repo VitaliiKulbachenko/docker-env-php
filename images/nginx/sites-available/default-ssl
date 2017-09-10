@@ -39,10 +39,8 @@ server {
 
 # Подключаем все шаблоны для проверки, на реальных хостах будем использовать только нужные.
 include /etc/nginx/templates/default;
-include /etc/nginx/templates/php;
-include /etc/nginx/templates/phpmyadmin;
-include /etc/nginx/templates/phpldapadmin;
-#include /etc/nginx/templates/perlcgi;
+include /etc/nginx/templates/php-fpm;
+
 
 
 }

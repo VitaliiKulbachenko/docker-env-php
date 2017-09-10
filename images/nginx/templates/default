@@ -1,7 +1,3 @@
-# Типовые настройки общие для всех доменов (если не захочется экзотики)
-##
-index index.html index.php;
-
 # Закрываем доступ к файлами .htaccess и .htpassword
 location ~ /\.ht {
 deny all;
