@@ -4,7 +4,7 @@ version: '3'
 services:
     nginx:
         # используем последний табильный образ nginx
-        build: ./images/nginx
+        image: vitaliikulbachenko/centos7-nginx
         #hostname: test.viit.com.ua
         restart: on-failure:5
         # маршрутизируем порты
@@ -30,7 +30,7 @@ services:
         volumes:
             - ./www:/var/www
     mysql:
-        build: ./images/mysql
+        image: vitaliikulbachenko/centos7-mysql57
         restart: on-failure:5
         ports:
             - "3306:3306"
