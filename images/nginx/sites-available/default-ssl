@@ -26,11 +26,6 @@ server {
 	
 	}
 
-        location /pub {
-            autoindex  on;
-            root  /var/www/default;
-        }
-
 	# Настройка логов, каждому виртуальному домену - свой лог
 	#если закомментирован тогда идет в глобальный лог указан в nginx.conf 
 	access_log /var/log/httpd/default-access.log;

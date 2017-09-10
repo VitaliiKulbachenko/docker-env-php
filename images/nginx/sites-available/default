@@ -10,13 +10,7 @@ server {
  	#limit_req  zone=default burst=6;
 	}
 
-        location /pub {
-            autoindex  on;
-            root  /var/www/default;
-        }
-
-	
-	# Подключаем все шаблоны для проверки, на реальных хостах будем использовать только нужные.
+  	# Подключаем все шаблоны для проверки, на реальных хостах будем использовать только нужные.
 	include /etc/nginx/templates/default;	
 	include /etc/nginx/templates/php-fpm;
 	
