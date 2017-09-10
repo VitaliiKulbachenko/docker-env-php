@@ -13,9 +13,9 @@ services:
             - "443:443"
         # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
         volumes:
-            - ./sites-available:/etc/nginx/sites-available
+            - ./nginx/sites-available:/etc/nginx/sites-available
             - ./www:/var/www
-            - ./logs:/var/log/nginx
+            - ./nginx/logs:/var/log/nginx
         # nginx должен общаться с php контейнером
         links:
             - php
